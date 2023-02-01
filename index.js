@@ -66,13 +66,13 @@ app.post('/api/shorturl', (req, res) => {
           //console.log(find)
           if (find) { // if exist, then show json object
 
-            res.json({ original_url: find.original_url, short_url: "caba.lg/" + find.short_url })
+            res.json({ original_url: find.original_url, short_url: find.short_url })
 
           } else { // if doesn't exist, then add the new URL to the database (new + save) and show de json object!
 
             const add = new Url({ original_url: original_url, short_url: shortNumber })
             add.save()
-            res.json({ original_url: add.original_url, short_url: "caba.lg/" + add.short_url })
+            res.json({ original_url: add.original_url, short_url: add.short_url })
           }
         })
       })
@@ -80,7 +80,7 @@ app.post('/api/shorturl', (req, res) => {
   })
 })
 
-app.get('/api/shorturl/caba.lg/:go', (req, res) => {
+app.get('/api/shorturl/:go', (req, res) => {
   let go = req.params.go
 
   Url.findOne({ short_url: go }, (err, find) => {
