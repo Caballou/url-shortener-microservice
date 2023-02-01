@@ -13,6 +13,14 @@
 
   <body>
     <h1>URL Shortener Microservice</h1>
+    <h2>Short URL Creation</h2>
+    <p>Example:
+    <code>
+      POST ./api/shorturl
+    </code>
+      - 
+      <code>https://www.google.com</code>
+    </p>
     <main>
       <section>
         <form action="api/shorturl" method="POST">
@@ -24,9 +32,15 @@
           </fieldset>
         </form>
       </section>
+      <h2>Example Usage:</h2>
+      <a href='https://url-shortener-microservice.caballou.repl.co/api/shorturl/caba.lg/1'>
+      [this_project_url]/api/shorturl/caba.lg/1
+      </a>
+      <h3>Will Redirect to:</h3>
+      <p>https://www.freecodecamp.org/</p>
     </main>
     <footer>
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
+      <p>by Caballou 🐴</p>
     </footer>
   </body>
 </html>
